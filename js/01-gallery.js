@@ -28,6 +28,12 @@ gallery.addEventListener('click', onModalClick);
 
 function onModalClick(e) {
   e.preventDefault();
+
+  //перевірка що клікаємо по картинці
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+
   const instance = basicLightbox.create(
     `
     <img src="${e.target.dataset.source}" width="800" height="600">
